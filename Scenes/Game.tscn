@@ -8,7 +8,7 @@
 
 [node name="Wall" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 534.261, 533.223 )
+transform/pos = Vector2( 550.586, 304.68 )
 transform/scale = Vector2( 27.0095, 1 )
 
 [node name="Wall 2" parent="." instance=ExtResource( 1 )]

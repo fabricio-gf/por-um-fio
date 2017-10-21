@@ -41,3 +41,25 @@ func checkDistance():
 		return false;
 	
 	return true;
+	
+func getDistance(p_number):
+	var dist
+	var extra_length
+	var subtract_dist
+	
+	dist = p1.get_pos() - p2.get_pos();
+	
+	if p_number == 1:
+		dist = -dist
+		
+	extra_length = dist.length() - DISTANCE_MAX
+	
+	if extra_length > 0:
+		print(extra_length)
+		subtract_dist = dist.normalized()*extra_length
+		print(subtract_dist)
+		return subtract_dist
+		
+	return Vector2(0, 0)
+	
+	

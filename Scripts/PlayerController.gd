@@ -45,7 +45,17 @@ func _fixed_process(delta):
         var n = get_collision_normal()
         motion = n.slide(motion)
         vel = n.slide(vel)
-        move(motion)s
+        move(motion)
+
+	motion = corda.getDistance(p_number)
+	move(motion)
+	
+	#if motion.y < 0:
+	#	if motion.x == 0:
+	#		vel.y = 0
+	#	else:
+	#		vel.y -= delta * GRAVITY
+	
 
 func _on_Area2D_body_enter( body ):
 	grounded = true
