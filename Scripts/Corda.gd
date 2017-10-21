@@ -4,7 +4,7 @@ const DISTANCE_MAX = 300
 const DISTANCE_MIN = 0
 
 const SCALE_MAX = 1
-const SCALE_MIN = 0.2
+const SCALE_MIN = 0.4
 
 onready var p1 = get_node("../Player 1")
 onready var p2 = get_node("../Player 2")
@@ -55,11 +55,16 @@ func getDistance(p_number):
 	extra_length = dist.length() - DISTANCE_MAX
 	
 	if extra_length > 0:
-		print(extra_length)
+		
 		subtract_dist = dist.normalized()*extra_length
-		print(subtract_dist)
+		
 		return subtract_dist
 		
 	return Vector2(0, 0)
 	
-	
+func pull(p_number):
+	if(p_number == 1 and p2.grounded == false):
+		p2.moveToPlayer(p1.get_pos())
+	elif (p_number == 2 and p1.grounded == false):
+		p1.moveToPlayer(p2.get_pos())
+		

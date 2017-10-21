@@ -6,7 +6,8 @@ extends KinematicBody2D
 
 const GRAVITY = 250.0
 const MOVESPEED = 150.0
-const JUMPSPEED = 200.0
+const JUMPSPEED = 100.0
+const PULL_FORCE = 1000.0
 var vel = Vector2()
 var grounded = false
 export var p_number = 0
@@ -23,8 +24,11 @@ func _ready():
 	
 func _input(event):
 	if event.is_action_pressed(str("jump_joy_p",p_number)) && grounded == true:
-		vel.y = -JUMPSPEED*get_scale().x
+		vel.y = -JUMPSPEED*(1+get_scale().x)
 		grounded = false
+		
+	if event.is_action_pressed(str("pull_joy_p",p_number)):
+		corda.pull(p_number)
 	
 func _fixed_process(delta):
 	
@@ -34,8 +38,9 @@ func _fixed_process(delta):
 		vel.x = -MOVESPEED
 	elif Input.is_action_pressed(str("right_joy_p",p_number)): 
 		vel.x = MOVESPEED
-	else: 
-		vel.x = 0
+	else:
+		vel.x /= 1.3
+	
 		
 	
 	var motion = vel * delta
@@ -59,3 +64,18 @@ func _fixed_process(delta):
 
 func _on_Area2D_body_enter( body ):
 	grounded = true
+
+
+func _on_Area2D_body_exit( body ):
+	grounded = false
+	
+func moveToPlayer(var pos):
+	var force
+	
+	print("PULL")
+	
+	force = (pos - get_pos())
+	force = force.normalized()
+	
+	vel += force*PULL_FORCE
+	vel.x *= 1.5

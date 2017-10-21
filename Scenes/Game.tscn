@@ -8,23 +8,23 @@
 
 [node name="Wall" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 550.586, 304.68 )
-transform/scale = Vector2( 27.0095, 1 )
+transform/pos = Vector2( 827.359, 350.933 )
+transform/scale = Vector2( 22.2714, 1 )
 
 [node name="Wall 2" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 740.908, 277.504 )
+transform/pos = Vector2( 1113.65, 272.063 )
 transform/scale = Vector2( 1, 11.3319 )
 
 [node name="Corda" parent="." instance=ExtResource( 2 )]
 
 [node name="Player 1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 173.089, 142.18 )
+transform/pos = Vector2( 673.707, 161.225 )
 
 [node name="Player 2" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 500.721, 163.816 )
+transform/pos = Vector2( 370.125, 174.699 )
 p_number = 2
 
 
