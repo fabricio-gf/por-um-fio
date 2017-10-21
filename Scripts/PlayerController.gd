@@ -7,14 +7,21 @@ extends KinematicBody2D
 const GRAVITY = 200.0
 const MOVESPEED = 100.0
 var vel = Vector2()
+var canJump = false
 export var p_number = 0
 
 func _ready():
+	set_process(true)
 	set_fixed_process(true)
-	# set_process_input(true)
+	set_process_input(true)
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
+	
+func _input(event):
+	if event.is_action_pressed("ui_accept") && canJump == true:
+		vel.y = -150
+		canJump = false
 	
 func _fixed_process(delta):
 	vel.y += delta * GRAVITY
@@ -25,6 +32,7 @@ func _fixed_process(delta):
 		vel.x = MOVESPEED
 	else: 
 		vel.x = 0
+		
 	
 	var motion = vel * delta
 	move(motion)
@@ -34,3 +42,6 @@ func _fixed_process(delta):
         motion = n.slide(motion)
         vel = n.slide(vel)
         move(motion)
+
+func _on_Area2D_body_enter( body ):
+	grounded = true
