@@ -4,8 +4,9 @@ extends KinematicBody2D
 # var a = 2
 # var b = "textvar"
 
-const GRAVITY = 200.0
-const MOVESPEED = 100.0
+const GRAVITY = 250.0
+const MOVESPEED = 150.0
+const JUMPSPEED = 200.0
 var vel = Vector2()
 var grounded = false
 export var p_number = 0
@@ -19,8 +20,8 @@ func _ready():
 	pass
 	
 func _input(event):
-	if event.is_action_pressed("ui_accept") && grounded == true:
-		vel.y = -150
+	if event.is_action_pressed(str("jump_joy_p",p_number)) && grounded == true:
+		vel.y = -JUMPSPEED
 		grounded = false
 	
 func _fixed_process(delta):

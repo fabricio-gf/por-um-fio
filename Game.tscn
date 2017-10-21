@@ -7,14 +7,21 @@
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
+transform/pos = Vector2( 173.089, 142.18 )
+
 [node name="Wall" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 471.323, 356.996 )
+transform/pos = Vector2( 534.261, 533.223 )
 transform/scale = Vector2( 27.0095, 1 )
 
 [node name="Wall 2" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 479.085, 274.987 )
+transform/pos = Vector2( 740.908, 277.504 )
 transform/scale = Vector2( 1, 11.3319 )
+
+[node name="Player 2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 500.721, 163.816 )
+p_number = 2
 
 
