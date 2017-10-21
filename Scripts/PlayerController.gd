@@ -7,7 +7,7 @@ extends KinematicBody2D
 const GRAVITY = 200.0
 const MOVESPEED = 100.0
 var vel = Vector2()
-var canJump = false
+var grounded = false
 export var p_number = 0
 
 func _ready():
@@ -19,9 +19,9 @@ func _ready():
 	pass
 	
 func _input(event):
-	if event.is_action_pressed("ui_accept") && canJump == true:
+	if event.is_action_pressed("ui_accept") && grounded == true:
 		vel.y = -150
-		canJump = false
+		grounded = false
 	
 func _fixed_process(delta):
 	vel.y += delta * GRAVITY
