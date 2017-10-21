@@ -11,6 +11,8 @@ var vel = Vector2()
 var grounded = false
 export var p_number = 0
 
+onready var corda = get_node("../Corda")
+
 func _ready():
 	set_process(true)
 	set_fixed_process(true)
@@ -21,10 +23,11 @@ func _ready():
 	
 func _input(event):
 	if event.is_action_pressed(str("jump_joy_p",p_number)) && grounded == true:
-		vel.y = -JUMPSPEED
+		vel.y = -JUMPSPEED*get_scale().x
 		grounded = false
 	
 func _fixed_process(delta):
+	
 	vel.y += delta * GRAVITY
 
 	if Input.is_action_pressed(str("left_joy_p",p_number)): 
@@ -42,7 +45,7 @@ func _fixed_process(delta):
         var n = get_collision_normal()
         motion = n.slide(motion)
         vel = n.slide(vel)
-        move(motion)
+        move(motion)s
 
 func _on_Area2D_body_enter( body ):
 	grounded = true
