@@ -12,8 +12,13 @@
 
 [node name="Wall" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 1430.52, 551.27 )
-transform/scale = Vector2( 48.3802, 1 )
+transform/pos = Vector2( 687.866, 552.94 )
+transform/scale = Vector2( 22.6148, 1 )
+
+[node name="Wall1" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1869.42, 543.68 )
+transform/scale = Vector2( 21.8245, 1 )
 
 [node name="Corda" parent="." instance=ExtResource( 2 )]
 
@@ -58,16 +63,26 @@ script/script = ExtResource( 4 )
 
 [node name="MoovinFloor" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1569.07, 403.958 )
+transform/pos = Vector2( 1238.68, 973.52 )
+transform/rot = -179.986
 transform/scale = Vector2( 9.12196, 1 )
 script/script = ExtResource( 6 )
-Destity = Vector2( 0, 0 )
-Speed = 20.0
+Destity = Vector2( 1272.84, 544.711 )
+Speed = 10.0
 
 [node name="BotaoTrigger" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 1014.09, 510.403 )
-transform/scale = Vector2( 3.84478, 0.900963 )
+transform/pos = Vector2( 1084.77, 531.438 )
+
+[node name="BotaoTrigger1" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1486.66, 533.873 )
+
+[connection signal="area_enter" from="BotaoTrigger" to="MoovinFloor" method="_on_BotaoTrigger_area_enter"]
+
+[connection signal="area_exit" from="BotaoTrigger" to="MoovinFloor" method="_on_BotaoTrigger_area_exit"]
+
+[connection signal="area_enter" from="BotaoTrigger1" to="MoovinFloor" method="_on_BotaoTrigger_area_enter"]
 
 
 [editable path="Player 1"]
