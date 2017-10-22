@@ -1,27 +1,32 @@
 [gd_scene load_steps=29 format=1]
 
-[ext_resource path="res://sprites/idle.png" type="Texture" id=1]
-[ext_resource path="res://sprites/danca1.png" type="Texture" id=2]
-[ext_resource path="res://sprites/danca2.png" type="Texture" id=3]
-[ext_resource path="res://sprites/danca3.png" type="Texture" id=4]
-[ext_resource path="res://sprites/danca4.png" type="Texture" id=5]
-[ext_resource path="res://sprites/danca5.png" type="Texture" id=6]
-[ext_resource path="res://sprites/danca6.png" type="Texture" id=7]
-[ext_resource path="res://sprites/danca7.png" type="Texture" id=8]
-[ext_resource path="res://sprites/danca8.png" type="Texture" id=9]
-[ext_resource path="res://sprites/danca9.png" type="Texture" id=10]
-[ext_resource path="res://sprites/danca10.png" type="Texture" id=11]
-[ext_resource path="res://sprites/danca11.png" type="Texture" id=12]
-[ext_resource path="res://sprites/danca12.png" type="Texture" id=13]
-[ext_resource path="res://sprites/corre1.png" type="Texture" id=14]
-[ext_resource path="res://sprites/corre2.png" type="Texture" id=15]
-[ext_resource path="res://sprites/corre3.png" type="Texture" id=16]
-[ext_resource path="res://sprites/corre4.png" type="Texture" id=17]
-[ext_resource path="res://sprites/corre5.png" type="Texture" id=18]
-[ext_resource path="res://sprites/corre6.png" type="Texture" id=19]
-[ext_resource path="res://sprites/comecaCorrer1.png" type="Texture" id=20]
-[ext_resource path="res://sprites/comecaCorrer2.png" type="Texture" id=21]
-[ext_resource path="res://Scripts/PlayerSprite.gd" type="Script" id=22]
+[ext_resource path="res://sprites/pula1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/pula2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/pula3.png" type="Texture" id=3]
+[ext_resource path="res://sprites/pula4.png" type="Texture" id=4]
+[ext_resource path="res://sprites/pula5.png" type="Texture" id=5]
+[ext_resource path="res://sprites/idle.png" type="Texture" id=6]
+[ext_resource path="res://sprites/comecaCorrer1.png" type="Texture" id=7]
+[ext_resource path="res://sprites/comecaCorrer2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/corre1.png" type="Texture" id=9]
+[ext_resource path="res://sprites/corre2.png" type="Texture" id=10]
+[ext_resource path="res://sprites/corre3.png" type="Texture" id=11]
+[ext_resource path="res://sprites/corre4.png" type="Texture" id=12]
+[ext_resource path="res://sprites/corre5.png" type="Texture" id=13]
+[ext_resource path="res://sprites/corre6.png" type="Texture" id=14]
+[ext_resource path="res://sprites/danca1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/danca2.png" type="Texture" id=16]
+[ext_resource path="res://sprites/danca3.png" type="Texture" id=17]
+[ext_resource path="res://sprites/danca4.png" type="Texture" id=18]
+[ext_resource path="res://sprites/danca5.png" type="Texture" id=19]
+[ext_resource path="res://sprites/danca6.png" type="Texture" id=20]
+[ext_resource path="res://sprites/danca7.png" type="Texture" id=21]
+[ext_resource path="res://sprites/danca8.png" type="Texture" id=22]
+[ext_resource path="res://sprites/danca9.png" type="Texture" id=23]
+[ext_resource path="res://sprites/danca10.png" type="Texture" id=24]
+[ext_resource path="res://sprites/danca11.png" type="Texture" id=25]
+[ext_resource path="res://sprites/danca12.png" type="Texture" id=26]
+[ext_resource path="res://Scripts/PlayerSprite.gd" type="Script" id=27]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -36,25 +41,20 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": false,
-"name": "dancaESarra",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "soDanca",
+"name": "comecaCorrer",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "corre",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": false,
-"name": "comecaCorrer",
-"speed": 5.0
+"name": "danca",
+"speed": 3.0
 } ]
 
 [node name="PlayerSprite" type="AnimatedSprite"]
