@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Scenes/Corda.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/MoovinFloor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/MoovinFloor.gd" type="Script" id=10]
 [ext_resource path="res://sprites/parabens.png" type="Texture" id=11]
+[ext_resource path="res://circus.ogg" type="AudioStream" id=12]
 
 [node name="Game" type="Node"]
 
@@ -198,6 +199,17 @@ margin/bottom = -182.0
 texture = ExtResource( 11 )
 expand = true
 stretch_mode = 5
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 12 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 [connection signal="area_enter" from="BotaoTrigger" to="MoovinFloor" method="_on_BotaoTrigger_area_enter"]
 
