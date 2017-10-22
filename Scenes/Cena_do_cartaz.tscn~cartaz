@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Scenes/Game.tscn
 [gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Scenes/Corda.tscn" type="PackedScene" id=1]
@@ -10,12 +11,33 @@
 [ext_resource path="res://Scenes/Botão.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/MoovinFloor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/MoovinFloor.gd" type="Script" id=10]
+=======
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Corda.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/MainCamera.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/MoovinFloor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/MoovinFloor.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Botão.tscn" type="PackedScene" id=7]
+>>>>>>> cartaz:Scenes/Cena_do_cartaz.tscn
 
 [node name="Game" type="Node"]
 
 [node name="Corda" parent="." instance=ExtResource( 1 )]
 
+<<<<<<< HEAD:Scenes/Game.tscn
 [node name="Player 1" parent="." instance=ExtResource( 2 )]
+=======
+transform/pos = Vector2( 687.866, 552.94 )
+transform/scale = Vector2( 22.6148, 1 )
+
+[node name="Wall1" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1869.42, 543.68 )
+transform/scale = Vector2( 21.8245, 1 )
+>>>>>>> cartaz:Scenes/Cena_do_cartaz.tscn
 
 editor/display_folded = true
 transform/pos = Vector2( 1509.76, 208.38 )
@@ -25,6 +47,10 @@ mode = 2
 [node name="Area2D" parent="Player 1"]
 
 editor/display_folded = true
+<<<<<<< HEAD:Scenes/Game.tscn
+=======
+transform/pos = Vector2( 684.811, 188.984 )
+>>>>>>> cartaz:Scenes/Cena_do_cartaz.tscn
 
 [node name="PlayerSprite" parent="Player 1"]
 
@@ -33,8 +59,12 @@ modulate = Color( 0.468449, 0.215668, 0.746094, 1 )
 [node name="Player 2" parent="." instance=ExtResource( 2 )]
 
 editor/display_folded = true
+<<<<<<< HEAD:Scenes/Game.tscn
 transform/pos = Vector2( 1440.75, 204.708 )
 collision/mask = 14
+=======
+transform/pos = Vector2( 370.125, 174.699 )
+>>>>>>> cartaz:Scenes/Cena_do_cartaz.tscn
 p_number = 2
 
 [node name="PlayerSprite" parent="Player 2"]
@@ -195,6 +225,29 @@ Speed = 5.0
 [connection signal="area_enter" from="BotaoTrigger 4" to="MoovinFloor 4" method="_on_BotaoTrigger_area_enter"]
 
 [connection signal="area_enter" from="BotaoTrigger 5" to="MoovinFloor 5" method="_on_BotaoTrigger_area_enter"]
+
+[node name="MoovinFloor" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1238.68, 973.52 )
+transform/rot = -179.986
+transform/scale = Vector2( 9.12196, 1 )
+script/script = ExtResource( 6 )
+Destity = Vector2( 1272.84, 544.711 )
+Speed = 10.0
+
+[node name="BotaoTrigger" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1084.77, 531.438 )
+
+[node name="BotaoTrigger1" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1486.66, 533.873 )
+
+[connection signal="area_enter" from="BotaoTrigger" to="MoovinFloor" method="_on_BotaoTrigger_area_enter"]
+
+[connection signal="area_exit" from="BotaoTrigger" to="MoovinFloor" method="_on_BotaoTrigger_area_exit"]
+
+[connection signal="area_enter" from="BotaoTrigger1" to="MoovinFloor" method="_on_BotaoTrigger_area_enter"]
 
 
 [editable path="Player 1"]
