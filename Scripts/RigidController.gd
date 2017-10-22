@@ -41,6 +41,7 @@ func _input(event):
 		playerSprite.set_animation("comecaCorrer")
 
 func _fixed_process(delta):
+	print(grounded)
 	set_rot(0)
 	if resetar != null:
 		set_pos(resetar)
