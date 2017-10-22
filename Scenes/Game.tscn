@@ -1,30 +1,46 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Corda.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/MainCamera.gd" type="Script" id=4]
 
 [node name="Game" type="Node"]
 
 [node name="Wall" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 827.359, 350.933 )
-transform/scale = Vector2( 22.2714, 1 )
-
-[node name="Wall 2" parent="." instance=ExtResource( 1 )]
-
-transform/pos = Vector2( 1113.65, 272.063 )
-transform/scale = Vector2( 1, 11.3319 )
+transform/pos = Vector2( 1430.52, 551.27 )
+transform/scale = Vector2( 48.3802, 1 )
 
 [node name="Corda" parent="." instance=ExtResource( 2 )]
 
 [node name="Player 1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 673.707, 161.225 )
+transform/pos = Vector2( 684.811, 188.984 )
 
 [node name="Player 2" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 370.125, 174.699 )
 p_number = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+script/script = ExtResource( 4 )
 
 
