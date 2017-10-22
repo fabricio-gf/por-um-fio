@@ -12,6 +12,8 @@ func _ready():
 func _on_Area2D_body_enter( body ):
 	print("CHEGUEI NO FINAL")
 	
+	print(body)
+	
 	player1.set_mode(1)
 	player2.set_mode(1)
 	
