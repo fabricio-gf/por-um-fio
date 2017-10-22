@@ -14,7 +14,8 @@
 
 [node name="Player 1" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 118.025, 290.755 )
+editor/display_folded = true
+transform/pos = Vector2( 1090.67, 177.737 )
 collision/mask = 14
 mode = 2
 
@@ -29,7 +30,7 @@ modulate = Color( 0.468449, 0.215668, 0.746094, 1 )
 [node name="Player 2" parent="." instance=ExtResource( 2 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 198.799, 295.02 )
+transform/pos = Vector2( 1188.56, 195.701 )
 collision/mask = 14
 p_number = 2
 
@@ -85,7 +86,6 @@ collision/mask = 8
 
 [node name="CheckpointManager" parent="." instance=ExtResource( 6 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 136.992, 445.223 )
 
 [node name="Checkpoint" parent="CheckpointManager" instance=ExtResource( 7 )]

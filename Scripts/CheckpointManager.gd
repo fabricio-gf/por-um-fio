@@ -17,7 +17,7 @@ func _on_area_enter(area, checkpoint):
 
 func posicao_respawn():
 	if checkpoint_atual != null:
-		return checkpoint_atual.get_pos()
+		return checkpoint_atual.get_global_pos()
 	else:
 		return get_pos()
 
