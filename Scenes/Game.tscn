@@ -19,7 +19,7 @@
 [node name="Player 1" parent="." instance=ExtResource( 2 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 177.611, 430.209 )
+transform/pos = Vector2( 2383.92, -329.724 )
 collision/mask = 14
 mode = 2
 
@@ -34,7 +34,7 @@ modulate = Color( 0.468449, 0.215668, 0.746094, 1 )
 [node name="Player 2" parent="." instance=ExtResource( 2 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 108.601, 426.537 )
+transform/pos = Vector2( 2314.91, -333.396 )
 collision/mask = 14
 p_number = 2
 
@@ -160,8 +160,7 @@ Speed = 20.0
 
 [node name="BotaoTrigger 4" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 2304.85, -202.623 )
-transform/rot = 180.0
+transform/pos = Vector2( 2303.18, -42.2854 )
 z/z = -1
 
 [node name="MoovinFloor 4" parent="." instance=ExtResource( 9 )]
