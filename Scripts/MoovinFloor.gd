@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends StaticBody2D
 
 # class member variables go here, for example:
 # var a = 2
@@ -21,7 +21,7 @@ func _process(delta):
 		dir = _Origin - get_pos()
 
 	if dir.length() > 1:
-		move(dir.normalized() * Speed)
+		translate(dir.normalized() * Speed)
 	pass
 
 
