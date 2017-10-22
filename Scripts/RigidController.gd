@@ -4,7 +4,7 @@ extends RigidBody2D
 # var a = 2
 # var b = "textvar"
 const MOVESPEED = 150.0
-const JUMPSPEED = 100.0
+const JUMPSPEED = 150.0
 const PULLFORCE = 1000.0
 export var p_number = 0
 var speed = Vector2()
@@ -24,6 +24,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed(str("jump_joy_p",p_number)) and grounded == true:
 		var jump = JUMPSPEED*(1+get_scale().x)
+		playerSprite.set_animation("pular")
 		set_linear_velocity(Vector2(get_linear_velocity().x, -jump ))
 		grounded = false
 		
@@ -60,6 +61,10 @@ func _fixed_process(delta):
 
 func _on_Area2D_body_enter( body ):
 	grounded = true
+	if get_linear_velocity().x > 0.5 or get_linear_velocity().x < -0.5:
+		playerSprite.set_animation("corre")
+	else:
+		playerSprite.set_animation("idle")
 
 
 func _on_Area2D_body_exit( body ):
