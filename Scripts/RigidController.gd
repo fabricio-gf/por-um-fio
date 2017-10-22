@@ -9,6 +9,7 @@ const PULLFORCE = 1000.0
 export var p_number = 0
 var speed = Vector2()
 var grounded = false
+var resetar = null
 
 onready var corda = get_node("../Corda")
 onready var playerSprite = get_node("PlayerSprite")
@@ -37,26 +38,30 @@ func _input(event):
 	if event.is_action_pressed(str("right_joy_p",p_number)):
 		playerSprite.set_flip_h(false)
 		playerSprite.set_animation("comecaCorrer")
-		
+
 func _fixed_process(delta):
 	set_rot(0)
-	
-	if Input.is_action_pressed(str("left_joy_p",p_number)):
-		set_linear_velocity(Vector2(-MOVESPEED, get_linear_velocity().y))
-	elif Input.is_action_pressed(str("right_joy_p",p_number)):
-		set_linear_velocity(Vector2(MOVESPEED, get_linear_velocity().y))
+	if resetar != null:
+		set_pos(resetar)
+		set_linear_velocity(Vector2())
+		resetar = null
+	else:
+		if Input.is_action_pressed(str("left_joy_p",p_number)):
+			set_linear_velocity(Vector2(-MOVESPEED, get_linear_velocity().y))
+		elif Input.is_action_pressed(str("right_joy_p",p_number)):
+			set_linear_velocity(Vector2(MOVESPEED, get_linear_velocity().y))
+			
+		#else:
+			#if(grounded == false):
+			#	set_linear_velocity(Vector2(0, get_linear_velocity().y))
 		
-	#else:
-		#if(grounded == false):
-		#	set_linear_velocity(Vector2(0, get_linear_velocity().y))
-	
-	apply_impulse(Vector2(), corda.getDistance(p_number))
-	
-	#if grounded == false:
-	#	playerSprite.set_animation("idle")
-	
-	if get_linear_velocity().x < 0.1 and get_linear_velocity().x > -0.1:
-		playerSprite.set_animation("idle")
+		apply_impulse(Vector2(), corda.getDistance(p_number))
+		
+		#if grounded == false:
+		#	playerSprite.set_animation("idle")
+		
+		if get_linear_velocity().x < 0.1 and get_linear_velocity().x > -0.1:
+			playerSprite.set_animation("idle")
 
 func _on_Area2D_body_enter( body ):
 	grounded = true
@@ -72,3 +77,6 @@ func moveToPlayer(var pos):
 	force = force.normalized()
 	
 	apply_impulse(Vector2(), force*PULLFORCE) 
+
+func marca_reset(pos):
+	resetar = pos
