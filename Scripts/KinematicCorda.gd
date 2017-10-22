@@ -32,9 +32,9 @@ func calculateScale():
 	percentage = (distance-DISTANCE_MIN)/(DISTANCE_MAX-DISTANCE_MIN)
 	scale = SCALE_MAX-(SCALE_MAX-SCALE_MIN)*percentage
 	p1.set_scale(Vector2(scale, scale))
-	p1.get_node("CollisionShape2D").set_scale(Vector2(scale,scale))
+	#p1.get_node("CollisionShape2D").set_scale(Vector2(scale,scale))
 	p2.set_scale(Vector2(scale, scale))
-	p2.get_node("CollisionShape2D").set_scale(Vector2(scale,scale))	
+	#p2.get_node("CollisionShape2D").set_scale(Vector2(scale,scale))	
 	
 
 	
@@ -60,7 +60,7 @@ func getDistance(p_number):
 		
 		subtract_dist = dist.normalized()*extra_length
 		
-		return 3*subtract_dist
+		return subtract_dist
 		
 	return Vector2(0, 0)
 	

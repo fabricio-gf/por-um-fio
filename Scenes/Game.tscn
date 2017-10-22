@@ -20,7 +20,7 @@ transform/scale = Vector2( 1, 11.3319 )
 
 [node name="Player 1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 673.707, 161.225 )
+transform/pos = Vector2( 684.811, 188.984 )
 
 [node name="Player 2" parent="." instance=ExtResource( 3 )]
 
