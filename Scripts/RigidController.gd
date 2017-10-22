@@ -11,6 +11,8 @@ var speed = Vector2()
 var grounded = false
 
 onready var corda = get_node("../Corda")
+onready var playerSprite = get_node("PlayerSprite")
+
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -28,18 +30,33 @@ func _input(event):
 	if event.is_action_pressed(str("pull_joy_p",p_number)):
 		corda.pull(p_number)
 		
+	if event.is_action_pressed(str("left_joy_p",p_number)):
+		playerSprite.set_flip_h(true)
+		playerSprite.set_animation("comecaCorrer")
+		
+	if event.is_action_pressed(str("right_joy_p",p_number)):
+		playerSprite.set_flip_h(false)
+		playerSprite.set_animation("comecaCorrer")
+		
 func _fixed_process(delta):
 	set_rot(0)
 	
 	if Input.is_action_pressed(str("left_joy_p",p_number)):
-		set_linear_velocity(Vector2(-MOVESPEED, get_linear_velocity().y))	
+		set_linear_velocity(Vector2(-MOVESPEED, get_linear_velocity().y))
 	elif Input.is_action_pressed(str("right_joy_p",p_number)):
 		set_linear_velocity(Vector2(MOVESPEED, get_linear_velocity().y))
+		
 	#else:
 		#if(grounded == false):
 		#	set_linear_velocity(Vector2(0, get_linear_velocity().y))
 	
 	apply_impulse(Vector2(), corda.getDistance(p_number))
+	
+	#if grounded == false:
+	#	playerSprite.set_animation("idle")
+	
+	if get_linear_velocity().x < 0.1 and get_linear_velocity().x > -0.1:
+		playerSprite.set_animation("idle")
 
 func _on_Area2D_body_enter( body ):
 	grounded = true

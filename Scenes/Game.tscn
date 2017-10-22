@@ -18,10 +18,18 @@ transform/scale = Vector2( 48.3802, 1 )
 
 transform/pos = Vector2( 684.811, 188.984 )
 
+[node name="PlayerSprite" parent="Player 1"]
+
+modulate = Color( 0.468449, 0.215668, 0.746094, 1 )
+
 [node name="Player 2" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 370.125, 174.699 )
 p_number = 2
+
+[node name="PlayerSprite" parent="Player 2"]
+
+modulate = Color( 0.13065, 0.453125, 0.0637207, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -44,3 +52,5 @@ drag_margin/bottom = 0.2
 script/script = ExtResource( 4 )
 
 
+[editable path="Player 1"]
+[editable path="Player 2"]
