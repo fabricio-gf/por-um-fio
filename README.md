@@ -14,7 +14,7 @@ Licensa
 -------
 Os códigos são distribuídos segundo a licensa
 [LGPLv3](https://www.gnu.org/licenses/lgpl.html) e os assets gráficos (arquivos
-.svg e .png) e sonoros (arquivos .ogg e .wav) segundo a licensa [CC BY
+.svg, .png e .gif) e sonoros (arquivos .ogg e .wav) segundo a licensa [CC BY
 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ![Dancinha da vitória](sprites/dancinha.gif)
